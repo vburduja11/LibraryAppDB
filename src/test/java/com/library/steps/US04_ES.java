@@ -25,7 +25,7 @@ public class US04_ES {
     @Given("the {string} on the home page_ES")
     public void the_on_the_home_page_es(String userType) {
 
-        loginPage.login(userType, userType);
+        loginPage.login(userType);
 
     }
     @Given("the user navigates to {string} page_ES")
