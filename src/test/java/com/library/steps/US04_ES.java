@@ -17,7 +17,7 @@ import java.util.Map;
 
 public class US04_ES {
     BookPage bookPage=new BookPage();
-    DashBoardPage dashBoardPage = new DashBoardPage();
+
     LoginPage loginPage = new LoginPage();
     String bookName;
 
@@ -51,16 +51,12 @@ public class US04_ES {
         BrowserUtil.waitFor(3);
         //UI Steps
 
-        //System.out.println("UI Bookname: "+bookPage.bookName.getText());
-        System.out.println("UI Bookname: "+bookPage.bookName.getAttribute("value"));
-
         String actualBookName = bookPage.bookName.getAttribute("value");
         String actualAuthorName = bookPage.author.getAttribute("value");
         String actualISBN = bookPage.isbn.getAttribute("value");
         String actualYear = bookPage.year.getAttribute("value");
         String actualDesc = bookPage.description.getAttribute("value");
 
-        System.out.println("actualISBN = " + actualISBN);
 
         //get same information from database
         String query = "select name,isbn,year,author,description from books\n" +
