@@ -11,17 +11,19 @@ import org.junit.Assert;
 
 public class US02_VB {
     String actualBookBorrowed;
-    LoginPage loginPage = new LoginPage();
-    DashBoardPage dashBoardPage = new DashBoardPage();
+    LoginPage loginPage;
+    DashBoardPage dashBoardPage;
 
     @Given("the {string} on the home page_VB")
     public void the_on_the_home_page_vb(String userType) {
+        loginPage = new LoginPage();
         loginPage.login(userType);
         BrowserUtil.waitFor(1);
     }
 
     @When("the librarian gets borrowed books number_VB")
     public void the_librarian_gets_borrowed_books_number_vb() {
+        dashBoardPage = new DashBoardPage();
         actualBookBorrowed = dashBoardPage.getModuleCount("Borrowed Books");
         System.out.println("actualBookBorrowed = " + actualBookBorrowed);
 
